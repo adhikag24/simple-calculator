@@ -3,17 +3,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <span class="text-center"><h1>Calculator</h1></span>
+    <h1>Calculator</h1>
     <br>
     <div class="container">
     <form method="GET">
         <label>Input 1:</label> <br>
-        <input type="number" id="num1" name="num1" placeholder="Number 1" required>
+        <input class= "form" type="number" id="num1" name="num1" placeholder="Number 1" required>
         <br><br>
         <label for="">Input 2:</label><br>
-        <input type="number" id="num2" name="num2" placeholder="Number 2" required>
+        <input class= "form" type="number" id="num2" name="num2" placeholder="Number 2" required>
         <br><br>
         <label for="">Choose Operation: </label>
         <select name="operation" id="operation">
@@ -26,25 +28,13 @@
         <button type="Submit" name="submit" value="submit">Calculate</button>
     </form>
 
-    <p> Answer is: </p>
+    <p class="answer"> Answer is: </p>
 </div>    
 </body>
 </html>
 
 <?php
-function add($num1, $num2){
-    return $num1 + $num2;
-}
-function sub($num1, $num2){
-    return $num1 - $num2;
-}
-function mul($num1, $num2){
-    return $num1 * $num2;
-}
-function div($num1, $num2){
-    return $num1 / $num2;
-}
-
+require_once("calculate.php");
     if(isset($_GET['submit'])) {
         $num1 = $_GET["num1"];
         $num2 = $_GET["num2"];
